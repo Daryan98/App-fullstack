@@ -10,7 +10,11 @@ import { withStyles, Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import { MdPerson, MdReorder, MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { colors } from '../../styleVariables';
-import Menu from '../../Components/Menu';
+import Menu from './profileMenu';
+
+import { forwordTo } from '../../index';
+import routes from '../../routes';
+
 
 const styles = theme => ({
   root: {
@@ -124,9 +128,9 @@ class NavigationBar extends Component {
             onClick={this.openUserMenu}
           >
             {/* <MdPerson className={classes.icons}/> */}
-            <Typography component="span" className={classes.login}>Login</Typography>
+            <Typography component="span" onClick={() => forwordTo(routes.SIGN_IN)} className={classes.login}>Login</Typography>
           </Button>
-          <Menu anchorEl={anchorEl} closeUserMenu={this.closeUserMenu} />
+          {/* <Menu anchorEl={anchorEl} closeUserMenu={this.closeUserMenu} /> */}
         </div>
       </div>
     )
